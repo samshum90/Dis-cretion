@@ -1,0 +1,19 @@
+.requestContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+background-color: grey;
+
+}
+
+#requestContainer{
+    padding-left: 30px;
+    width: 100%;
+    padding-right: 0;
+}
+
+#dashboardContainer{
+    padding: 10px 0 10px 20px;
+}
+

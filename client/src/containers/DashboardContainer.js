@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from '../components/Banner/Banner.js'
-import BotContainer from './BotContainer.js'
+import Bot from '../components/Bot/Bot.js';
 import {Container, Row, Col } from "react-bootstrap";
 import RequestItem from "../components/Request/RequestItem.js"
 import Request from '../helpers/requests';
+import './dashboardContainer.css';
 
 class DashboardContainer extends React.Component {
     constructor(props){
@@ -23,21 +23,20 @@ class DashboardContainer extends React.Component {
 
       }
 
-
     render(){
         return(
-        <Container fluid>
+        <Container fluid id="dashboardContainer">
+          <Row>
+            <h1>Dashboard</h1>
+          </Row>
             <Row>
-                <Banner />
-            </Row>
-            <Row>
-                <Col xs={6}>
+                <Col sm={9} className="requestContainer" id="requestContainer">
                   {this.state.requests.map(request => (
-                    <RequestItem request={request.id} {...request} />
+                    <RequestItem key={request._id} {...request} />
                     ))}
                 </Col>
-                <Col xs={6}>
-                    <BotContainer />
+                <Col sm={3} id= "botContainer">
+                    <Bot />
                 </Col>
             </Row>
         </Container>

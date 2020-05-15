@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row} from "react-bootstrap";
+import "./RequestItem.css"
 
 function RequestItem({id, 
     typeOfRequests,
@@ -10,11 +11,11 @@ function RequestItem({id,
     approval,
     yourRationale}) {
     return (
-        <Row>
+        <Row className="RequestItem" id="requestItem">
             <div>Type Of Requests: {typeOfRequests}</div>
             <div>Summery Of Requests: {summeryOfRequests}</div>
             <div>Reason Of Request: {reasonOfRequest}</div>
-            <div>Out Of Policy:{outOfPolicy}</div>
+            <div>Out Of Policy: {outOfPolicy}</div>
             <div>Further Approval: {furtherApproval}</div>
             <div>Approval: {approval}</div>
             <div>Your Rationale:{yourRationale}</div>

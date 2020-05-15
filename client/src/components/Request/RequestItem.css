@@ -1,0 +1,14 @@
+.RequestItem{
+    width: 100%;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+    margin: 10px 0px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#requestItem{
+
+}
+
