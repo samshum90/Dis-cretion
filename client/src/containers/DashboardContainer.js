@@ -9,7 +9,8 @@ class DashboardContainer extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        requests: []
+        requests: [],
+        selectedRequest: null,
       };
     }
 
@@ -20,7 +21,6 @@ class DashboardContainer extends React.Component {
         .then((data) => {
           this.setState({requests: data})
         });
-
       }
 
     render(){
