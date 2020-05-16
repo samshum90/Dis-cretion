@@ -1,16 +1,18 @@
 import React from 'react';
-import Bot from '../components/Bot/Bot.js';
-import {Container, Row, Col } from "react-bootstrap";
-import RequestItem from "../components/Request/RequestItem.js"
+import {Container, Row} from "react-bootstrap";
 import Request from '../helpers/requests';
+import RequestDetail from '../components/Request/RequestDetail';
+import RequestList from '../components/Request/RequestList';
 import './dashboardContainer.css';
 
 class DashboardContainer extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        requests: []
+        requests: [],
+        currentRequest: null
       };
+      this.handleRequestSelected = this.handleRequestSelected.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +22,11 @@ class DashboardContainer extends React.Component {
         .then((data) => {
           this.setState({requests: data})
         });
+      }
 
+      handleRequestSelected(index) {
+        const selectedRequest = this.state.requests[index];
+        this.setState({currentRequest: selectedRequest})
       }
 
     render(){
@@ -30,14 +36,10 @@ class DashboardContainer extends React.Component {
             <h1>Dashboard</h1>
           </Row>
             <Row>
-                <Col sm={9} className="requestContainer" id="requestContainer">
-                  {this.state.requests.map(request => (
-                    <RequestItem key={request._id} {...request} />
-                    ))}
-                </Col>
-                <Col sm={3} id= "botContainer">
-                    <Bot />
-                </Col>
+              <RequestList requests={this.state.requests}/>
+            </Row>
+            <Row>
+              <RequestDetail request={this.state.currentRequest}/>
             </Row>
         </Container>
         )
