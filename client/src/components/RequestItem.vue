@@ -1,18 +1,15 @@
 <template>
-  <b-container fluid class="requestitem">
-    <b-row>
-      Type Of Requests: {{request.typeOfRequests}}
-      Summery Of Requests: {{request.summeryOfRequests}}            
-      Reason Of Request: {{request.reasonOfRequest}}
-      Out Of Policy: {{request.outOfPolicy}}
-      Further Approval: {{request.furtherApproval}}
-      Approval: {{request.approval}}
-      Your Rationale: {{request.yourRationale}}
-      <router-link :to="{ name: 'requestDetails', params:{id: request._id }}">
-         Show Details
-      </router-link>
-    </b-row>
-  </b-container>
+    <tr class="requestitem">
+            <td> Status </td>
+            <td> {{request.key}} </td>
+            <td> {{request.summeryOfRequests}}  </td>
+            <td> Status </td>
+            <td>      
+              <router-link :to="{ name: 'requestDetails', params:{id: request._id }}" target="_blank">
+                Show Details
+              </router-link>
+            </td>
+    </tr>
 </template>
 
 <script>
@@ -28,6 +25,9 @@ export default {
 </script>
 
 <style>
+.table-borderless td{
+  border: 5px;
+}
 
 
 </style>

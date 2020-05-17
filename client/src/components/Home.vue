@@ -1,10 +1,12 @@
 <template>
-    <b-container fluid >
+    <b-container fluid class="dash">
       <b-row>
-        <h1>Welcome to Dis-cretion</h1>
+        <h1>Dis-cretion cases needs your decision:</h1>
       </b-row>
       <b-row>
-        <requests-list :requests="requests"/>
+        <b-col cols="12">
+           <requests-list :requests="requests"/>
+        </b-col>
       </b-row>
     </b-container>
 </template>
@@ -35,5 +37,8 @@ export default {
 </script>
 
 <style>
+.dash{
+  color: #6C756B;
+}
 
 </style>

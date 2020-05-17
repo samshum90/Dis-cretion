@@ -27,6 +27,14 @@ export default {
 </script>
 
 <style>
+*{
+  font-family: Helvetica Neue;
+
+}
+:root{
+--paleGreen: #779FA1;
+--paleBlue: #F2F4FF;
+}
 .h1{
   background-color:#b3daff;
  padding: 20px;

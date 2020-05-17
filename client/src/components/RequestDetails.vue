@@ -1,15 +1,43 @@
 <template>
-    <b-container fluid>
+    <b-container fluid class="detail">
+        <b-row>
+            <b-col cols="1">
+                <h2> id </h2>
+            </b-col>
+            <b-col cols="10">
+                <h2> {{request.summeryOfRequests}} </h2>
+            </b-col>
+        </b-row>
         <b-row>
             <b-col cols="8">
-     User {{ id }}
-           Type Of Requests: {{request.typeOfRequests}}
-      Summery Of Requests: {{request.summeryOfRequests}}            
-      Reason Of Request: {{request.reasonOfRequest}}
-      Out Of Policy: {{request.outOfPolicy}}
-      Further Approval: {{request.furtherApproval}}
-      Approval: {{request.approval}}
-      Your Rationale: {{request.yourRationale}}
+                    <b-form @submit="update">
+                         <label for="postdate">Date Of Request: {{ request.date }} </label>
+
+                    <b-form-group id="input-group-2" label="Summery Of Requests:" label-for="summeryOfRequests">
+                        <b-form-input id="summeryOfRequests" v-model="request.summeryOfRequests" required>               
+                        </b-form-input>
+                    </b-form-group>
+                    <b-form-group id="input-group-3" label="Request details:" label-for="reasonOfRequest">
+                        <b-form-textarea id="reasonOfRequest" v-model="request.reasonOfRequest" required 
+                        rows="3" max-rows="6">
+                        </b-form-textarea>
+                    </b-form-group>
+                    <b-form-group id="input-group-4" label="Approval:" label-for="approval">
+                        <b-form-select id="approval" v-model="request.approval" :options="options" >               
+                        </b-form-select>
+                    </b-form-group>
+                    <b-form-group id="input-group-5" label="Rationale:" label-for="rationale">
+                        <b-form-textarea id="rationale" v-model="request.rationale"
+                        rows="3" max-rows="6">
+                        </b-form-textarea>
+                    </b-form-group>
+
+            <span class="buttons">
+                <b-button type="submit" id="update" >Save</b-button>
+                <b-button id="send">Send </b-button>
+            </span>
+            
+          </b-form>
       </b-col>
       <b-col cols="4">
           <bot />
@@ -26,8 +54,9 @@ export default {
     data(){
     return {
       request: null,
-
+      options: ['Approved', 'Rejected', 'Pending']
     }
+
     },
     mounted(){
         console.log('Mounted is being triggered!')
@@ -42,5 +71,15 @@ export default {
 </script>
 
 <style>
+.detail{
+    color: #6C756B;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
 
+#update{
+    margin-top: 0;
+}
 </style>
