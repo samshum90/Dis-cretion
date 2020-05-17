@@ -1,0 +1,35 @@
+const baseURL = 'http://localhost:3000/api/requests/'
+
+export default {
+  get() {
+    return fetch(baseURL)
+      .then(res => res.json())
+  },
+  getById(id) {
+    return fetch(baseURL + id)
+      .then(res => res.json())
+  },
+  add(payload) {
+    return fetch("http://localhost:3000/api/requests/", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+  },
+  update(payload) {
+    return fetch(baseURL + payload._id, {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(res => res.json())
+  },
+  delete(id) {
+    return fetch(baseURL + id, {
+      method: 'DELETE'
+    })
+  }
+}
