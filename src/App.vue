@@ -34,6 +34,7 @@ export default {
 :root{
 --paleGreen: #779FA1;
 --paleBlue: #F2F4FF;
+--paleGrey: #6C756B;
 }
 .h1{
   background-color:#b3daff;

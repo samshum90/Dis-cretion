@@ -38,7 +38,7 @@ export default {
 
 <style>
 .dash{
-  color: #6C756B;
+  color: var(--paleGrey);
 }
 
 </style>

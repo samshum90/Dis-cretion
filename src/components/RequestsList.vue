@@ -3,7 +3,7 @@
     <table>
       <tr>
           <th> Status </th>
-          <th> Id </th>
+          <th> ID </th>
           <th> Summary </th>
           <th>Type </th>
           <th> Details </th>
@@ -48,7 +48,7 @@ th{
   font-size: 1.6em;
 }
 td{
-  border: 1px solid;
+  border: 1px solid var(--paleGrey);
   text-align: center;
 }
 

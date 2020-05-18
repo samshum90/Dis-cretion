@@ -1,6 +1,6 @@
 <template>
     <b-container fluid class="detail">
-        <b-row>
+        <b-row class="banner">
             <b-col cols="1">
                 <h2> id </h2>
             </b-col>
@@ -11,17 +11,16 @@
         <b-row>
             <b-col cols="8">
                     <b-form @submit="update">
-                         <label for="postdate">Date Of Request: {{ request.date }} </label>
+                        <div class="grid">
+                           <p>Date Of Request:</p> 
+                           <label for="postdate"> {{ request.date }}</label>
 
-                    <b-form-group id="input-group-2" label="Summery Of Requests:" label-for="summeryOfRequests">
-                        <b-form-input id="summeryOfRequests" v-model="request.summeryOfRequests" required>               
-                        </b-form-input>
-                    </b-form-group>
-                    <b-form-group id="input-group-3" label="Request details:" label-for="reasonOfRequest">
-                        <b-form-textarea id="reasonOfRequest" v-model="request.reasonOfRequest" required 
-                        rows="3" max-rows="6">
-                        </b-form-textarea>
-                    </b-form-group>
+                            <p>Request Summery:</p>
+                            <label for="summeryOfRequests"> {{request.summeryOfRequests}}</label>
+                            
+                            <p>Request Details:</p>
+                            <label for="summeryOfRequests"> {{request.reasonOfRequest}}</label>
+                        </div>
                     <b-form-group id="input-group-4" label="Approval:" label-for="approval">
                         <b-form-select id="approval" v-model="request.approval" :options="options" >               
                         </b-form-select>
@@ -71,15 +70,31 @@ export default {
 </script>
 
 <style>
+.banner{
+    padding: 30px 0 10px 0;
+    border-bottom: 1px solid var(--paleGrey)
+}
 .detail{
     color: #6C756B;
 }
 .buttons{
     display: flex;
     flex-direction: row;
+    float: right;
 }
 
 #update{
     margin-top: 0;
+}
+
+.grid{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 1fr 100px 100px;
+}
+
+.grid p{
+    font-weight: bold;
 }
 </style>
