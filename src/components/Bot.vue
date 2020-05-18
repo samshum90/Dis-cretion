@@ -40,6 +40,7 @@ export default {
     width: auto; 
     max-width: 50px; 
     max-height: 50px;
+    color: #96C5F7;
     
 }
 

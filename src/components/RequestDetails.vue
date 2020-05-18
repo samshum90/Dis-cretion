@@ -26,7 +26,7 @@
                         </b-form-select>
                     </b-form-group>
                     <b-form-group id="input-group-5" label="Rationale:" label-for="rationale">
-                        <b-form-textarea id="rationale" v-model="request.rationale"
+                        <b-form-textarea class="input-lg" id="rationale" v-model="request.rationale"
                         rows="3" max-rows="6">
                         </b-form-textarea>
                     </b-form-group>
@@ -96,5 +96,22 @@ export default {
 
 .grid p{
     font-weight: bold;
+}
+
+#input-group-4{
+    display:flex;
+    flex-direction: row;
+}
+#input-group-5{
+    display:flex;
+    flex-direction: row;
+}
+
+#approval{
+    margin-left: 13px;
+}
+
+#rationale{
+    margin-left: 10px;
 }
 </style>
