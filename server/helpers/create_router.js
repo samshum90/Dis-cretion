@@ -20,7 +20,7 @@ const router = express.Router();
   router.get('/:id', (req, res) => {
     const id = req.params.id;
     collection
-      .findOne({ _id: ObjectID(id) })
+      .findOne({ _id: id })
       .then((doc) => res.json(doc))
       .catch((err) => {
         console.error(err);
@@ -62,7 +62,7 @@ const router = express.Router();
     delete updatedData._id;
     collection
     .findOneAndUpdate(
-      { _id: ObjectID(id)},
+      { _id: id},
       { $set: updatedData },
       {returnOriginal: false}
     )

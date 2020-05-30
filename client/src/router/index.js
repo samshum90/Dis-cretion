@@ -9,6 +9,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
+    props: true,
     component: Home
   },
   // {
