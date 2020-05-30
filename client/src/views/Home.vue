@@ -8,7 +8,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <status />
+          <status :requests="requests" />
         </v-col>
       </v-row>
       <v-row>
@@ -18,7 +18,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <further-approval-list />
+          <further-approval-list :requests="requests" />
         </v-col>
       </v-row>
     </v-container>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js';
 import Service from '../services/service.js'
 import Status from '../components/Status.vue'
 import EmployeeRequestList from '../components/EmployeeRequestList.vue'
@@ -36,6 +37,7 @@ export default {
   data(){
     return {
       requests: [],
+      
 
     }
   },
@@ -49,7 +51,19 @@ export default {
     Service.get()
     // .then( res => res.json())
     .then( requests => this.requests = requests )
-    }
+
+      eventBus.$on('update-request', requestToUpdate => {
+        console.log("on")
+        const updateRequest = {...requestToUpdate};
+        Service.update(updateRequest );
+        console.log(updateRequest)
+        const index = this.requests.findIndex(need => need._id === requestToUpdate._id);
+        this.requests.splice(index, 1, updateRequest);
+      })
+    },
+  computed:{
+
+  }
 }
 </script>
 

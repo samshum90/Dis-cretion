@@ -1,21 +1,20 @@
 <template>
-<v-app>
     <v-card>
-        <v-card-title>
+        <v-card-title class="darkBlue--text">
             Employee requests
         </v-card-title>
     <v-data-table
       :headers="headers"
       :items="requests"
-
-      class="elevation-1"
+      :items-per-page="5"
+      class="elevation-1 darkBlue--text"
     >
 
       <template v-slot:item.actions="{ item }">
         <router-link :to="{ name: 'RequestDetails', params:{id: item._id, request: item }}" target="_blank">
         <v-icon
           small
-          class="mr-2"
+          class="mr-2 darkBlue--text"
      
         >
          fas fa-play
@@ -24,7 +23,6 @@
       </template>
     </v-data-table>
     </v-card>
-    </v-app>
 </template>
 
 <script>
@@ -39,11 +37,12 @@ export default {
           align: 'start',
           sortable: false,
           value: 'status',
+          class: 'darkBlue--text title'
         },
-        { text: 'Id', value: '_id' },
-        { text: 'Summary', value: 'summery' },
-        { text: 'Type', value: 'type' },
-        { text: 'Details', value: 'actions'},
+        { text: 'Id', value: '_id', class: 'darkBlue--text title' },
+        { text: 'Summary', value: 'summery', class: 'darkBlue--text title' },
+        { text: 'Type', value: 'type', class: 'darkBlue--text title' },
+        { text: 'Details', value: 'actions', class: 'darkBlue--text title'},
         
         ],
     }

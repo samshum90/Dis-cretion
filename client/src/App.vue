@@ -37,6 +37,7 @@
               v-for="item in items"
               :key="item.title"
               :to="item.link"
+              :requests="requests"
               link
             >
               <v-list-item-icon>
@@ -88,10 +89,28 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js';
+import Service from '@/services/service.js'
   export default {
     props: {
     },
+    mounted(){
+    console.log('Mounted is being triggered!')
+    Service.get()
+    // .then( res => res.json())
+    .then( requests => this.requests = requests )
+
+    eventBus.$on('update-request', requestToUpdate => {
+        console.log("on")
+        const updateRequest = {...requestToUpdate};
+        Service.update(updateRequest );
+        console.log(updateRequest)
+        const index = this.requests.findIndex(need => need._id === requestToUpdate._id);
+        this.requests.splice(index, 1, updateRequest);
+      })
+    },
     data: () => ({
+      requests: [],
       drawer: null,
       items: [
         { title: 'Dashboard', icon: 'fas fa-tachometer-alt', link: '/' },

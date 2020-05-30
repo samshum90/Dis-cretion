@@ -13,7 +13,8 @@ db.requests.insertMany([
     token: "nk4l8dwx68pdbqbhqa4sknk4l8dwuhus",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6f",
@@ -26,7 +27,8 @@ db.requests.insertMany([
     token: "dohwgkhitjtmuj4ply3dohwgkh3fcvh4",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6g",
@@ -39,7 +41,8 @@ db.requests.insertMany([
     token: "qnbgplxe1ikrojgjqnbgsnefcs137034",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6h",
@@ -52,7 +55,8 @@ db.requests.insertMany([
     token: null,
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6i",
@@ -65,7 +69,8 @@ db.requests.insertMany([
     token: null,
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6j",
@@ -78,7 +83,8 @@ db.requests.insertMany([
     token: "alzl5w0ojob4mbddalzl8rhywunbm8pi",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: "Pending",
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6k",
@@ -91,7 +97,8 @@ db.requests.insertMany([
     token: "c4wwimirycv180mtj0rhc4wwim3aem0q",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6l",
@@ -104,7 +111,8 @@ db.requests.insertMany([
     token: "os2gfa5omcxmwy18o2gsb49uos2gfa5o",
     status: "new",
     type: "D",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6m",
@@ -117,7 +125,8 @@ db.requests.insertMany([
     token:"s923qg8ijwlhqno27pcs923qgj0lkkw1",
     status: "new",
     type: "A",
-    furtherApproval: null
+    furtherApproval: null,
+    rational: null
   },
   {
     _id: "5ed2531108c9666b4fb1ca6n",
@@ -130,7 +139,8 @@ db.requests.insertMany([
     status: "new",
     type: "B",
     furtherApproval: null,
-    token: null
+    token: null,
+    rational: null
   },
 
   
