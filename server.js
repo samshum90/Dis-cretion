@@ -27,8 +27,11 @@ MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true})
   })
   .catch(console.err);
 
+  app.get('/', function (req, res) {
+    res.render(path.join(__dirname + '/index.html'))
+  })
 
-  var port = process.env.PORT || 3000;
+  var port = process.env.PORT || 5000;
 app.listen(port, function () {
   console.log(`App running on port ${ this.address().port }`);
 });
