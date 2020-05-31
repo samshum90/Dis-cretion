@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const createRouter = require('./helpers/create_router.js');
+const createRouter = require('./server/helpers/create_router.js');
 const path = require('path');
 const serveStatic = require('serve-static');
 
