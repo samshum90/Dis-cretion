@@ -24,6 +24,5 @@ MongoClient.connect('mongodb://localhost:27017')
   })
   .catch(console.err);
 
-app.listen(3000, function () {
-  console.log(`App running on port ${ this.address().port }`);
-});
+  var port = process.env.PORT || 3000;
+app.listen(port);
