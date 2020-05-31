@@ -1,4 +1,4 @@
-const baseURL = 'api/requests/'
+const baseURL = 'http://localhost:3000/api/requests/'
 
 export default {
   get() {
