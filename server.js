@@ -23,9 +23,6 @@ MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true})
   })
   .catch(console.err);
 
-  app.get('/', function (req, res) {
-    res.render(path.join(__dirname + '/index.html'))
-  })
 
   var port = process.env.PORT || 3000;
 app.listen(port, function () {
