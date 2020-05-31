@@ -1,4 +1,4 @@
-const baseURL = 'https://dis-cretion.herokuapp.com/api/requests/'
+const baseURL = '/api/requests/'
 
 export default {
   get() {
