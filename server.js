@@ -13,6 +13,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(history())
 
+const requests = require('./server/helpers/create_router');
+
+app.use('/api/requests', requests);
+
 
 MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true})
   .then((client) => {
