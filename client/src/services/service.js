@@ -10,7 +10,7 @@ export default {
       .then(res => res.json())
   },
   add(payload) {
-    return fetch("http://localhost:3000/api/requests/", {
+    return fetch(baseURL, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

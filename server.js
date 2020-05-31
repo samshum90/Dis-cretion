@@ -7,12 +7,12 @@ const createRouter = require('./server/helpers/create_router.js');
 const path = require('path');
 const serveStatic = require('serve-static');
 
-app.use(serveStatic(__dirname + "/dist"));
+app.use(serveStatic(__dirname));
 app.use(bodyParser.json());
 app.use(cors());
 
 
-MongoClient.connect('mongodb://localhost:27017')
+MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
   .then((client) => {
     const db = client.db('Hr_requests');
     const requestsCollection = db.collection('requests');
@@ -22,4 +22,6 @@ MongoClient.connect('mongodb://localhost:27017')
   .catch(console.err);
 
   var port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port, function () {
+  console.log(`App running on port ${ this.address().port }`);
+});
