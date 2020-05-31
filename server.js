@@ -7,12 +7,12 @@ const createRouter = require('./server/helpers/create_router.js');
 const path = require('path');
 const serveStatic = require('serve-static');
 
-app.use(serveStatic(__dirname));
+app.use(serveStatic(__dirname + "/dist"));
 app.use(bodyParser.json());
 app.use(cors());
 
 
-MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true})
   .then((client) => {
     const db = client.db('Hr_requests');
     const requestsCollection = db.collection('requests');
