@@ -11,9 +11,6 @@ app.use(serveStatic(__dirname + "/dist"));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get(/.*/, function (req, res) {
-	res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
