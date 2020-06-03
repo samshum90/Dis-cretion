@@ -15,17 +15,17 @@ app.use(cors());
 app.use(history())
 
 
-// MongoClient.connect('mongodb://35.192.137.226:3000')
-//   .then((client) => {
-//     const db = client.db('flexible_work');
-//     const requestsCollection = db.collection('response');
-//     console.log(requestsCollection)
-//     const requestsRouter = createRouter(requestsCollection);
-//     app.use('/', requestsRouter);
-//   })
-//   .catch(console.err);
+MongoClient.connect('mongodb://35.192.137.226:3000')
+  .then((client) => {
+    const db = client.db('flexible_work');
+    const requestsCollection = db.collection('response');
+    console.log(requestsCollection)
+    const requestsRouter = createRouter(requestsCollection);
+    app.use('/api/request', requestsRouter);
+  })
+  .catch(console.err);
 
-//   app.engine('html', require('ejs').renderFile);
+  app.engine('html', require('ejs').renderFile);
 
   var port = process.env.PORT || 80;
 app.listen(port, function () {
