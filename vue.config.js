@@ -5,11 +5,5 @@ module.exports = {
     "vuetify"
   ],
   outputDir: path.resolve(__dirname, './dist'),
-  devServer: {
-    proxy:{
-    '/api': {
-      target: 'http://localhost:3000'
-    }
-  }
-  }
+
 }
