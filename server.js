@@ -9,7 +9,7 @@ const serveStatic = require('serve-static');
 // const history = require('connect-history-api-fallback')
 
 
-app.use(serveStatic(__dirname + "../dist"));
+app.use(serveStatic(__dirname + "dist"));
 app.use(bodyParser.json());
 app.use(cors());
 // app.use(history())
