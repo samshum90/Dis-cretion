@@ -4,7 +4,7 @@ module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
-  outputDir: path.resolve(__dirname, '../dist'),
+  outputDir: path.resolve(__dirname, './dist'),
   devServer: {
     proxy:{
     '/api': {
