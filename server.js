@@ -21,7 +21,7 @@ MongoClient.connect('mongodb://35.192.137.226:3000')
     const requestsCollection = db.collection('response');
     console.log(requestsCollection)
     const requestsRouter = createRouter(requestsCollection);
-    app.use('/api', requestsRouter);
+    app.use(__dirname + "/api", requestsRouter);
   })
   .catch(console.err);
 
