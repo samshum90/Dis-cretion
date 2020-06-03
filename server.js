@@ -8,9 +8,7 @@ const path = require('path');
 const serveStatic = require('serve-static');
 // const history = require('connect-history-api-fallback')
 
-app.get('/', function (req, res) {
-  res.render(path.join(__dirname + '/index.html'))
-})
+
 app.use(serveStatic(__dirname + "dist"));
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,7 +27,7 @@ MongoClient.connect('mongodb://35.192.137.226:3000')
 
   app.engine('html', require('ejs').renderFile);
 
-  var port = process.env.PORT || 5000;
+  var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log(`App running on port ${ this.address().port }`);
 });
