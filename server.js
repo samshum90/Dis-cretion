@@ -6,13 +6,13 @@ const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
 const path = require('path');
 const serveStatic = require('serve-static');
-// const history = require('connect-history-api-fallback')
+const history = require('connect-history-api-fallback')
 
 
 app.use(serveStatic(__dirname + "dist"));
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(history())
+app.use(history())
 
 
 MongoClient.connect('mongodb://35.192.137.226:3000')
