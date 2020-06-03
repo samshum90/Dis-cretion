@@ -32,7 +32,7 @@ MongoClient.connect('mongodb://35.192.137.226:3000')
 
   app.engine('html', require('ejs').renderFile);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 app.listen(port, function () {
   console.log(`App running on port ${ this.address().port }`);
 });
