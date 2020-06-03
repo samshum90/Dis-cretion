@@ -1,4 +1,4 @@
-const baseURL = '/api/request'
+const baseURL = '/api'
 
 export default {
   get() {
