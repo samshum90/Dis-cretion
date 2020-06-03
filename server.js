@@ -9,12 +9,7 @@ const serveStatic = require('serve-static');
 // const history = require('connect-history-api-fallback')
 
 
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
-
-// this * route is to serve project on different page routes except root `/`
-app.get(/.*/, function (req, res) {
-	res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
+app.use(serveStatic(__dirname + "dist"));
 app.use(bodyParser.json());
 app.use(cors());
 // app.use(history())
@@ -26,13 +21,13 @@ MongoClient.connect('mongodb://35.192.137.226:3000')
     const requestsCollection = db.collection('response');
     console.log(requestsCollection)
     const requestsRouter = createRouter(requestsCollection);
-    app.use('/api', requestsRouter);
+    app.use('/', requestsRouter);
   })
   .catch(console.err);
 
   app.engine('html', require('ejs').renderFile);
 
-var port = process.env.PORT || 8080;
+  var port = process.env.PORT || 80;
 app.listen(port, function () {
   console.log(`App running on port ${ this.address().port }`);
 });
