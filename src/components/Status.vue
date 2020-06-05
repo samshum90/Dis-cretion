@@ -4,14 +4,14 @@
            <v-col>
                <RequestStatus :requests="requests" />
            </v-col>
+            <v-col>
+                <NewCases :requests="requests" />
+           </v-col>
            <v-col>
                 <ApprovalStatus :requests="requests" />
            </v-col>
            <v-col>
                <NewGuidances />
-           </v-col>
-           <v-col>
-                <NewCases :requests="requests" />
            </v-col>
         </v-row>
     </v-container>

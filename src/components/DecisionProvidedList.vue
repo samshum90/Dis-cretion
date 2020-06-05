@@ -1,12 +1,12 @@
 <template>
     <v-card>
         <v-card-title class="darkBlue--text">
-            Further Approvals
+            Decision Provided
         </v-card-title>
     <v-data-table
       :headers="headers"
       :items="getRequests"
-      :items-per-page="2"
+      :items-per-page="5"
       class="elevation-1 darkBlue--text"
     >
 
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-    name: 'FutherApprovalList',
+    name: 'DecisionProvidedList',
     props: ["requests"],
     data () {
         return {
@@ -53,7 +53,7 @@ export default {
 
     computed: {
         getRequests(){
-            return this.requests.filter(request => request.type === "Study Leave")
+            return this.requests.filter(request => request.decision != "notdecided")
         }
 
     }

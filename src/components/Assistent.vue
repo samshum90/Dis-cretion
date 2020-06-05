@@ -13,12 +13,13 @@
                  Dis-cretion assistant
         </v-list-item-title>
 
-        <p>You can find some relevant policy information</p> 
-        <ul>
-            <li v-for="(link, index) in assistent.poldocs" :key="index">
-             <a v-bind:href="link">{{ link }}</a>
-            </li>
-        </ul>
+        <p>You can find some relevant policy information 
+            <ul>
+                <li v-for="(link, index) in assistent.poldocs" :key="index">
+                <a v-bind:href="link">Link {{ index + 1 }}</a>
+                </li>
+            </ul>
+        </p>
     
         <p>There were <b>{{assistent.cases.length}}</b> similar types of requests in the last 18 months. See details <a href="/">here</a>.
         </p>
@@ -29,7 +30,9 @@
             <ul>
                 <li>What would I be doing differently once I start the flexible working pattern?</li>
                 <li>How would I manage a balance among study, work and life?</li>
+            </ul>
         <p><b>Operations</b></p>
+            <ul>
                 <li>How would the day-to-day operations be impacted by flexible working pattern?</li>
                 <li>What resources / arrangements would I need to ensure acceptable operations?</li>
             </ul>

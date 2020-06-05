@@ -20,6 +20,11 @@
         <v-col>
           <further-approval-list :requests="requests" />
         </v-col>
+       </v-row>
+       <v-row> 
+        <v-col>
+          <decision-provided-list :requests="requests" />
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -30,6 +35,7 @@ import Service from '../services/service.js'
 import Status from '../components/Status.vue'
 import EmployeeRequestList from '../components/EmployeeRequestList.vue'
 import FurtherApprovalList from '../components/FurtherApprovalList.vue'
+import DecisionProvidedList from '../components/DecisionProvidedList.vue'
 
 export default {
   name: 'Home',
@@ -44,6 +50,7 @@ export default {
     "status": Status,
     "employee-request-list": EmployeeRequestList,
     "further-approval-list": FurtherApprovalList,
+    "decision-provided-list": DecisionProvidedList,
   },
   mounted(){
     console.log('Mounted is being triggered!')
