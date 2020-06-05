@@ -8,7 +8,7 @@
             >   
             fas fa-tasks
         </v-icon>
-            Further Approval
+            Further Approvals
         </p>
         <h2>
                {{getNumber}}
@@ -28,7 +28,7 @@ export default {
       },
   computed: {
     getNumber() {
-        const approvalArray = this.requests.filter(request => request.decision === "notdecided")
+        const approvalArray = this.requests.filter(request => request.type === "Study Leave")
         return approvalArray.length
     }
 

@@ -107,6 +107,8 @@ import Service from '@/services/service.js'
         console.log(updateRequest)
         const index = this.requests.findIndex(need => need._id === requestToUpdate._id);
         this.requests.splice(index, 1, updateRequest);
+        this.$router.push({path: `/`
+})
       })
     },
     data: () => ({

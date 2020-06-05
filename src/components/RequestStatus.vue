@@ -8,10 +8,10 @@
             >   
             fas fa-tasks
         </v-icon>
-            Employee requests
+            Open Requests
         </p>
         <h2>
-                {{requests.length}}    
+                {{getNumber}}    
         </h2>
     </v-card>
 </template>
@@ -19,7 +19,14 @@
 <script>
 export default {
     name:"RequestStatus",
-    props:["requests"]
+    props:["requests"],
+    computed: {
+    getNumber() {
+        const approvalArray = this.requests.filter(request => request.status === "New" || request.decision ==="notdecided")
+        return approvalArray.length
+    }
+
+  }
 
 }
 </script>

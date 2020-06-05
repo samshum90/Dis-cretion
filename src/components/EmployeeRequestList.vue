@@ -1,11 +1,11 @@
 <template>
     <v-card>
         <v-card-title class="darkBlue--text">
-             Employee Requests
+             Open Requests
         </v-card-title>
     <v-data-table
       :headers="headers"
-      :items="requests"
+      :items="getRequests"
       :items-per-page="5"
       class="elevation-1 darkBlue--text"
     >
@@ -46,6 +46,12 @@ export default {
         
         ],
     }
+    },
+    computed: {
+        getRequests(){
+            return this.requests.filter(request => request.decision === "notdecided")
+        }
+
     }
 }
 </script>

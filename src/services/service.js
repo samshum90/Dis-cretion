@@ -1,12 +1,13 @@
-const baseURL = '/api'
+const baseURL = 'http://35.192.137.226:8080/'
 
 export default {
   get() {
-    return fetch(baseURL)
+    return fetch(baseURL + "database/query/all")
       .then(res => res.json())
   },
+
   getById(id) {
-    return fetch(baseURL + id)
+    return fetch(baseURL + "database/query/" + id)
       .then(res => res.json())
   },
   add(payload) {
@@ -20,7 +21,7 @@ export default {
       .then(res => res.json())
   },
   addAssistent(payload) {
-    return fetch('http://35.192.137.226:8080/flexible_work', {
+    return fetch(baseURL + 'flexible_work', {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
