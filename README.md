@@ -1,15 +1,13 @@
 # Dis-cretion
 A tool to empower staff to make informed decisions on employee requests efficiently and consistently
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Daec55zxb_s/0.jpg)](http://www.youtube.com/watch?v=Daec55zxb_s)
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YDaec55zxb_s
-" target="_blank"><img src="http://img.youtube.com/vi/YDaec55zxb_s/0.jpg" 
-alt="Dis-Cretion Video" width="240" height="180" border="10" /></a>
+[![Dis-Cretion Video](http://img.youtube.com/vi/Daec55zxb_s/0.jpg)](http://www.youtube.com/watch?v=Daec55zxb_s)
 
 Our Submission to Automation Anywhere COVID-19 Botathon.
 
-[Live App on Heroku](https://dis-cretion.herokuapp.com/) [DevPost Link](https://devpost.com/software/dis-cretion-cnhlfw)
+[Live App on Heroku](https://dis-cretion.herokuapp.com/) 
+
+[DevPost Link](https://devpost.com/software/dis-cretion-cnhlfw)
 
 ## Inspiration
 * Many organisations couldn’t process a large number of employee queries timely during the COVID-19.
